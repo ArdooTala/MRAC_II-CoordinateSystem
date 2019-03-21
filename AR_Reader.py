@@ -24,7 +24,7 @@ class Detector:
         max = sorted([len(str(arg)) for arg in args], reverse=True)[0]
         cv2.rectangle(image,
                       (int(corner[0]), int(corner[1])),
-                      (int(corner[0]) + max*6+20, int(corner[1]) + len(args)*11+30),
+                      (int(corner[0]) + max*6+20, int(corner[1]) + len(args)*12+30),
                       (0, 0, 0), -1)
         for arg in args:
             cv2.putText(image, arg, (int(corner[0])+10, int(corner[1])+i+20),
@@ -72,7 +72,7 @@ class Detector:
 
 
 if __name__ == "__main__":
-    detector = Detector(0.144, "Calibration_Parameters.pickle", [1, 2, 9])
+    detector = Detector(0.144, "Calibration_Parameters.pickle", [0, 8, 9])
     tr = Transformations([2500, 1000, 600], [2500, -1000, 600], [2900, 1000, 650])
     cap = cv2.VideoCapture(0)
 
